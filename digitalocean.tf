@@ -34,6 +34,7 @@ resource "digitalocean_droplet" "attacker" {
       "bin/base-install.sh",
       "bin/kali-install.sh",
       "bin/splunk-install.sh"
+
     ]
   }
 }
