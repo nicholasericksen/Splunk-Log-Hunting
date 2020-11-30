@@ -32,4 +32,10 @@ export TF_VAR_PUBLIC="<path_to_key>/id_rsa_terraform_splunk.pub"
 where `<DO_API_KEY>` is your Digital Ocean API key.
 And then run `source ~/.bash_profile` to enable the changes.
 
+
+WARNING!!
+
+You should change the password on the splunk container in the file `bin/splunk-install.sh`
+By default it is `Password123`
+
 You can then run `terraform init`, `terraform plan`, `terraform apply` to build each server.
