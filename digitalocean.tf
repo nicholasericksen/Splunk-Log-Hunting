@@ -79,29 +79,29 @@ resource "digitalocean_firewall" "splunk" {
   inbound_rule {
     protocol         = "tcp"
     port_range       = "22"
-    source_addresses = ["47.17.123.145"]
+    source_addresses = ["0.0.0.0/0"]
   }
 
   inbound_rule {
     protocol         = "tcp"
     port_range       = "80"
-    source_addresses = ["47.17.123.145"]
+    source_addresses = ["0.0.0.0/0"]
   }
 
   inbound_rule {
     protocol         = "tcp"
     port_range       = "8000"
-    source_addresses = ["47.17.123.145"]
+    source_addresses = ["0.0.0.0/0"]
   }
   inbound_rule {
     protocol         = "tcp"
     port_range       = "8088-8089"
-    source_addresses = ["47.17.123.145", digitalocean_droplet.victim.ipv4_address]
+    source_addresses = ["0.0.0.0/0", digitalocean_droplet.victim.ipv4_address]
 
   }
   inbound_rule {
     protocol         = "icmp"
-    source_addresses = ["47.17.123.145"]
+    source_addresses = ["0.0.0.0/0"]
   }
 
   outbound_rule {
@@ -140,13 +140,13 @@ resource "digitalocean_firewall" "victim" {
   inbound_rule {
     protocol         = "tcp"
     port_range       = "22"
-    source_addresses = ["47.17.123.145"]
+    source_addresses = ["0.0.0.0/0"]
   }
 
   inbound_rule {
     protocol         = "tcp"
     port_range       = "80"
-    source_addresses = ["47.17.123.145"]
+    source_addresses = ["0.0.0.0/0"]
   }
 
   inbound_rule {
@@ -157,7 +157,7 @@ resource "digitalocean_firewall" "victim" {
   }
   inbound_rule {
     protocol         = "icmp"
-    source_addresses = ["47.17.123.145"]
+    source_addresses = ["0.0.0.0/0"]
   }
 
   outbound_rule {
